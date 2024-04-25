@@ -1,8 +1,11 @@
 import React, { useState, useRef } from 'react';
 import './LoveLetter.css';
 import audioFile from './kushi.mp3';
+import Image from './image4.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const LoveLetter = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [isFullSize, setIsFullSize] = useState(false);
   const audioRef = useRef(null);
@@ -31,16 +34,21 @@ const LoveLetter = () => {
   };
 
   return (
-    <div className={`envelope ${isOpen ? 'open' : ''}`} onClick={!isFullSize ? handleOpenLetter : handleCloseLetter}>
-      <div className="flap"></div>
-      <div className="body"></div>
-      <div className={`letter ${isFullSize ? 'fullSize' : ''}`}>
-        mah dear kundanapu bomma🖤,<br />
-        never have i been so blessed as to fall in love with someone as wonderful as you...<br />i loveeee youuuu :)<br />
-        always yours,<br />
-        @niihaaarrrr
+    <div style={{ backgroundImage: `url(${Image})`, backgroundSize: 'cover', height: '100vh',overflow:'-moz-hidden-unscrollable', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <div className={`envelope ${isOpen ? 'open' : ''}`} onClick={!isFullSize ? handleOpenLetter : handleCloseLetter}>
+        <div className="flap"></div>
+        <div className="body"></div>
+        <div className={`letter ${isFullSize ? 'fullSize' : ''}`}>
+          To My Dearest Friend,<br/>
+          Nainuuu... 🤩 
+          <br/>
+          A Very Happy Birthday to you 🎂🍰🎈🎉🎊 <br/> <br/>
+          <button className='button' onClick={()=>{
+            navigate('/letter')
+          }}>Click to view full letter</button>
+        </div>
+        <audio ref={audioRef} src={audioFile} onError={(e) => console.error('Audio error:', e.message)} />
       </div>
-      <audio ref={audioRef} src={audioFile} onError={(e) => console.error('Audio error:', e.message)} />
     </div>
   );
 };
