@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import './LoveLetter.css';
-import audioFile from './kushi.mp3';
-import Image from './image4.jpg';
+import audioFile from './music.mp3';
+import Image from './image.png';
 import { useNavigate } from 'react-router-dom';
 
 const LoveLetter = () => {
@@ -39,8 +39,8 @@ const LoveLetter = () => {
         <div className="flap"></div>
         <div className="body"></div>
         <div className={`letter ${isFullSize ? 'fullSize' : ''}`}>
-          To My Dearest Friend,<br/>
-          Nainuuu... 🤩 
+          To My Dearest Future Husband,<br/>
+          VISHALLLL... JIIII🤩 
           <br/>
           A Very Happy Birthday to you 🎂🍰🎈🎉🎊 <br/> <br/>
           <button className='button' onClick={()=>{
