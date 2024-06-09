@@ -16,7 +16,7 @@
 ## Running the Application
 ```bash
 npm start
-
+```
 ## Editing things
 change the components/LoveLetter names which we appear at first and change the audio file and background image to your required file
 
